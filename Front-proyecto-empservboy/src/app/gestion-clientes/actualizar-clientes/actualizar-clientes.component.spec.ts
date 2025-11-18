@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActualizarCliente } from './actualizar-cliente';
+import { ActualizarClientesComponent } from './actualizar-clientes.component';
 
 describe('ActualizarCliente', () => {
-  let component: ActualizarCliente;
-  let fixture: ComponentFixture<ActualizarCliente>;
+  let component: ActualizarClientesComponent;
+  let fixture: ComponentFixture<ActualizarClientesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ActualizarCliente]
+      imports: [ActualizarClientesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ActualizarCliente);
+    fixture = TestBed.createComponent(ActualizarClientesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
