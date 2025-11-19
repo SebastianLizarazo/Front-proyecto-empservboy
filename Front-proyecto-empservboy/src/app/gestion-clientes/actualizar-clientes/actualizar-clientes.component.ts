@@ -26,11 +26,11 @@ export class ActualizarClientesComponent {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id') || '';
+    this.id = this.route.snapshot.paramMap.get('codigo') || '';
 
     this.clienteForm = this.fb.group({
       id: [{ value: '', disabled: true }],
-      nombre: ['', Validators.required],
+      nombre: [{ value: '', disabled: true }],
       nit: ['', Validators.required],
       direccion: ['', Validators.required],
       telefono: ['', Validators.required],
@@ -49,9 +49,10 @@ export class ActualizarClientesComponent {
 
   onSubmit(): void {
     if (this.clienteForm.valid) {
+      const formValues = this.clienteForm.getRawValue();
       const clienteActualizado: Cliente = {
-        id: this.id,
-        ...this.clienteForm.getRawValue()
+        ...formValues,
+        id: this.id
       };
 
       this.clienteService.updateCliente(clienteActualizado).subscribe({

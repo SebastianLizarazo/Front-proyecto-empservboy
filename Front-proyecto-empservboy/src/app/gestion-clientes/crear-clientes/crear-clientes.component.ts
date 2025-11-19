@@ -24,7 +24,6 @@ clienteForm: FormGroup;
     private router: Router
   ) {
     this.clienteForm = this.fb.group({
-      id: ['', Validators.required],
       nombre: ['', Validators.required],
       nit: ['', Validators.required],
       direccion: ['', Validators.required],

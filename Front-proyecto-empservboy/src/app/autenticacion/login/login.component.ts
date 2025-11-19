@@ -17,14 +17,17 @@ export class LoginComponent {
   constructor(private authService: AutenticacionServiceService, private router: Router) { }
 
   login() {
-    this.authService.login(this.id, this.password).subscribe({
-      next: () => {
-        console.log('Login exitoso');
-        this.router.navigate(['/clientes']);
-      },
-      error: err => {
-        console.error('Error en el login', err);
-      }
-    });
-  }
+  this.authService.login(this.id, this.password).subscribe({
+    next: (res: any) => {
+      console.log('Login exitoso');
+
+      localStorage.setItem('token', res.token);
+
+      this.router.navigate(['/clientes']);
+    },
+    error: err => {
+      console.error('Error en el login', err);
+    }
+  });
+}
 }

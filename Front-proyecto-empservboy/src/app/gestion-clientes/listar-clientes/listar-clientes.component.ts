@@ -37,11 +37,19 @@ export class ListarClientesComponent {
       this.router.navigate(['/clientes/crear']);
     }
 
-    actualizarCliente(id: string): void {
+    actualizarCliente(id: string | undefined): void {
+      if (!id) {
+        console.error('ID de cliente no disponible');
+        return;
+      }
       this.router.navigate(['/clientes/actualizar', id]);
     }
 
-    eliminarCliente(id: string): void {
+    eliminarCliente(id: string | undefined): void {
+    if (!id) {
+      console.error('ID de cliente no disponible');
+      return;
+    }
     this.clienteService.deleteClienteById(id).subscribe({
       next: () => {
         alert('Cliente eliminado con éxito');
