@@ -6,12 +6,12 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AutenticacionServiceService {
-  private apiUrl: string = 'https://ehpnv2yej9.execute-api.us-east-2.amazonaws.com/dev/';
+  private apiUrl: string = 'https://ehpnv2yej9.execute-api.us-east-2.amazonaws.com/dev';
 
   constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): Observable<{ access_token: string }> {
-    return this.http.post<{ access_token: string }>(`${this.apiUrl}/login`, { username, password })
+  login(id: string, password: string): Observable<{ access_token: string }> {
+    return this.http.post<{ access_token: string }>(`${this.apiUrl}/usuarios/login`, { id, password })
       .pipe(
         tap(response => {
           localStorage.setItem('token', response.access_token);

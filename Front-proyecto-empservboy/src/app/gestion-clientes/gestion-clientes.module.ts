@@ -13,7 +13,7 @@ import { ActualizarClientesComponent } from './actualizar-clientes/actualizar-cl
     RouterModule.forChild(routes),
     ListarClientesComponent,
     CrearClientesComponent,
-    ActualizarClienteComponent
+    ActualizarClientesComponent
   ],
   providers: [GestionClientesServiceService]
 })

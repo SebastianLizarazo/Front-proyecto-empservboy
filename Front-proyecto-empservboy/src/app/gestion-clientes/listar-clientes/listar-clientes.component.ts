@@ -7,7 +7,7 @@ import { NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-listar-clientes',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor],
   templateUrl: './listar-clientes.component.html',
   styleUrl: './listar-clientes.component.css'
 })

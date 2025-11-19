@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { ListarClientesComponent } from "./listar-clientes/listar-clientes.component.spec";
+import { ListarClientesComponent } from "./listar-clientes/listar-clientes.component";
 import { CrearClientesComponent } from "./crear-clientes/crear-clientes.component";
 import { ActualizarClientesComponent } from "./actualizar-clientes/actualizar-clientes.component";
 

@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
+  id: string = '';
   password: string = '';
 
   constructor(private authService: AutenticacionServiceService, private router: Router) { }
 
   login() {
-    this.authService.login(this.username, this.password).subscribe({
+    this.authService.login(this.id, this.password).subscribe({
       next: () => {
         console.log('Login exitoso');
         this.router.navigate(['/clientes']);
