@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="title">Lista de Recepciones de Residuos</h1>
+
+  <div class="table-wrapper">
+    <table class="students-table">
+      <thead>
+        <tr>
+          <th>Cliente ID</th>
+          <th>Tipo Residuo</th>
+          <th>Cantidad (kg)</th>
+          <th>Fecha Recepción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let residuo of residuos">
+          <td>{{ residuo.cliente_id }}</td>
+          <td>{{ residuo.tipo_residuo }}</td>
+          <td>{{ residuo.cantidad_kg }}</td>
+          <td>{{ residuo.fecha_recepcion }}</td>
+          <td>
+            <button
+              class="btn btn-primary"
+              (click)="actualizarRecepcion(residuo.id)">
+              Actualizar
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="eliminarRecepcion(residuo.id)">
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button class="btn btn-success" (click)="crearRecepcion()">Crear recepción</button>
+</div>

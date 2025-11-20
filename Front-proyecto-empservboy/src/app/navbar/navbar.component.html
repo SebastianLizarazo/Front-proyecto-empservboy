@@ -1,0 +1,32 @@
+<nav class="navbar" *ngIf="showNavbar">
+  <div class="navbar-container">
+    <div class="navbar-brand" routerLink="/dashboard">
+      🏢 Sistema de Gestión
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <span>☰</span>
+    </button>
+
+    <div class="navbar-menu" [class.active]="isMenuOpen">
+      <a routerLink="/dashboard" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
+        🏠 Dashboard
+      </a>
+      <a routerLink="/clientes" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
+        👥 Clientes
+      </a>
+      <a routerLink="/usuarios" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
+        👤 Usuarios
+      </a>
+      <a routerLink="/contratos" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
+        📄 Contratos
+      </a>
+      <a routerLink="/residuos" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
+        ♻️ Residuos
+      </a>
+      <button class="logout-btn" (click)="logout()">
+        🚪 Cerrar Sesión
+      </button>
+    </div>
+  </div>
+</nav>

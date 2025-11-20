@@ -23,7 +23,7 @@ export class LoginComponent {
 
       localStorage.setItem('token', res.token);
 
-      this.router.navigate(['/clientes']);
+      this.router.navigate(['/dashboard']);
     },
     error: err => {
       console.error('Error en el login', err);

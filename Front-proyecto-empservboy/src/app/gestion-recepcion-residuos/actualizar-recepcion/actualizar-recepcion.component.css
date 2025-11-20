@@ -43,9 +43,8 @@
   box-shadow: 0 0 4px rgba(0,123,255,0.25);
 }
 
-.form-control.disabled {
-  background: #f5f5f5;
-  color: #777;
+.form-control:disabled {
+  background: #e9ecef;
   cursor: not-allowed;
 }
 
@@ -90,7 +89,6 @@
   cursor: not-allowed;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .container {
     margin: 1rem;

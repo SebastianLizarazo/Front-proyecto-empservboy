@@ -22,8 +22,13 @@
       <input id="telefono" class="form-control" type="text" formControlName="telefono" />
     </div>
 
-    <button class="btn btn-primary" type="submit" [disabled]="clienteForm.invalid">
-      Actualizar
-    </button>
+    <div class="button-group">
+      <button class="btn btn-secondary" type="button" (click)="cancelar()">
+        Cancelar
+      </button>
+      <button class="btn btn-primary" type="submit" [disabled]="clienteForm.invalid">
+        Actualizar
+      </button>
+    </div>
   </form>
 </div>

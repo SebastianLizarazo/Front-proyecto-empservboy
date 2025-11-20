@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="form-title">Crear Contrato</h2>
+
+  <form class="client-form" [formGroup]="contratoForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="clienteId">Cliente ID</label>
+      <input id="clienteId" class="form-control" formControlName="clienteId" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo</label>
+      <input id="tipo" class="form-control" formControlName="tipo" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="fechaInicio">Fecha Inicio</label>
+      <input id="fechaInicio" class="form-control" formControlName="fechaInicio" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="fechaFin">Fecha Fin</label>
+      <input id="fechaFin" class="form-control" formControlName="fechaFin" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="valor">Valor</label>
+      <input id="valor" class="form-control" formControlName="valor" type="number" />
+    </div>
+
+    <button class="btn btn-success" type="submit" [disabled]="contratoForm.invalid">
+      Guardar
+    </button>
+  </form>
+</div>

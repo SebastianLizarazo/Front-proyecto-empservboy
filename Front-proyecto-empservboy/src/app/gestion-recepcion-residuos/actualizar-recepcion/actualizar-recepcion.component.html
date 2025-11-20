@@ -1,0 +1,48 @@
+<div class="container">
+  <h2 class="form-title">Actualizar Recepción de Residuos</h2>
+
+  <form class="client-form" [formGroup]="recepcionForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input id="id" class="form-control" formControlName="id" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="cliente_id">Cliente ID</label>
+      <input id="cliente_id" class="form-control" formControlName="cliente_id" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="tipo_residuo">Tipo de Residuo</label>
+      <select id="tipo_residuo" class="form-control" formControlName="tipo_residuo">
+        <option value="">Seleccione un tipo</option>
+        <option value="Orgánico">Orgánico</option>
+        <option value="Plástico">Plástico</option>
+        <option value="Papel">Papel</option>
+        <option value="Vidrio">Vidrio</option>
+        <option value="Metal">Metal</option>
+        <option value="Electrónico">Electrónico</option>
+        <option value="Peligroso">Peligroso</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="cantidad_kg">Cantidad (kg)</label>
+      <input id="cantidad_kg" class="form-control" formControlName="cantidad_kg" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="fecha_recepcion">Fecha de Recepción</label>
+      <input id="fecha_recepcion" class="form-control" formControlName="fecha_recepcion" type="date" />
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-secondary" type="button" (click)="cancelar()">
+        Cancelar
+      </button>
+      <button class="btn btn-primary" type="submit" [disabled]="recepcionForm.invalid">
+        Actualizar
+      </button>
+    </div>
+  </form>
+</div>

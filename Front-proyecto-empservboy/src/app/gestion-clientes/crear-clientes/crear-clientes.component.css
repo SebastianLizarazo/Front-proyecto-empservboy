@@ -43,6 +43,13 @@
   box-shadow: 0 0 4px rgba(0,123,255,0.25);
 }
 
+/* Grupo de botones */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 /* Botón */
 .btn {
   padding: 10px 16px;
@@ -51,8 +58,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 100%;
-  margin-top: 1rem;
+  flex: 1;
 }
 
 .btn-success {
@@ -62,6 +68,15 @@
 
 .btn-success:hover:enabled {
   background: #218838;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
 }
 
 .btn:disabled {
@@ -74,5 +89,9 @@
   .container {
     margin: 1rem;
     padding: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
   }
 }

@@ -67,4 +67,8 @@ export class ActualizarClientesComponent {
       });
     }
   }
+
+  cancelar(): void {
+    this.router.navigate(['/clientes']);
+  }
 }
