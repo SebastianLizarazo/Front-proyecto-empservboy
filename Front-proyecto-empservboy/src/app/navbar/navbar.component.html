@@ -1,7 +1,7 @@
 <nav class="navbar" *ngIf="showNavbar">
   <div class="navbar-container">
     <div class="navbar-brand" routerLink="/dashboard">
-      🏢 Sistema de Gestión
+      <img src="/assets/logo.jpg" alt="Logo Empservboy" class="navbar-logo">
     </div>
 
     <button class="menu-toggle" (click)="toggleMenu()">
@@ -10,22 +10,22 @@
 
     <div class="navbar-menu" [class.active]="isMenuOpen">
       <a routerLink="/dashboard" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
-        🏠 Dashboard
+        Dashboard
       </a>
       <a routerLink="/clientes" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
-        👥 Clientes
+        Clientes
       </a>
       <a routerLink="/usuarios" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
-        👤 Usuarios
+        Usuarios
       </a>
       <a routerLink="/contratos" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
-        📄 Contratos
+        Contratos
       </a>
       <a routerLink="/residuos" routerLinkActive="active" class="navbar-link" (click)="toggleMenu()">
-        ♻️ Residuos
+        Residuos
       </a>
       <button class="logout-btn" (click)="logout()">
-        🚪 Cerrar Sesión
+        Cerrar Sesión
       </button>
     </div>
   </div>
