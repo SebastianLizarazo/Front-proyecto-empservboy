@@ -8,8 +8,7 @@ import { NgFor, NgIf } from '@angular/common';
   selector: 'app-listar-clientes',
   standalone: true,
   imports: [NgFor],
-  templateUrl: './listar-clientes.component.html',
-  styleUrl: './listar-clientes.component.css'
+  templateUrl: './listar-clientes.component.html'
 })
 export class ListarClientesComponent {
   public clientes: Cliente[]= [];

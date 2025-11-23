@@ -10,8 +10,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-listar-contratos',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './listar-contratos.html',
-  styleUrl: './listar-contratos.css'
+  templateUrl: './listar-contratos.html'
 })
 export class ListarContratos implements OnInit {
   contratos: Contrato[] = [];

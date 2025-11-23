@@ -10,8 +10,7 @@ import { NgFor } from '@angular/common';
   selector: 'app-listar-recepciones',
   standalone: true,
   imports: [NgFor],
-  templateUrl: './listar-recepciones.component.html',
-  styleUrl: './listar-recepciones.component.css'
+  templateUrl: './listar-recepciones.component.html'
 })
 export class ListarRecepcionesComponent implements OnInit {
   public residuos: Residuo[] = [];

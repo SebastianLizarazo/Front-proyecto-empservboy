@@ -8,8 +8,7 @@ import { NgFor } from '@angular/common';
   selector: 'app-listar-usuarios',
   standalone: true,
   imports: [NgFor],
-  templateUrl: './listar-usuarios.component.html',
-  styleUrl: './listar-usuarios.component.css'
+  templateUrl: './listar-usuarios.component.html'
 })
 export class ListarUsuariosComponent {
   public usuarios: Usuario[] = [];
