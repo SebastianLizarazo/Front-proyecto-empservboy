@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
   imports: [
     ReactiveFormsModule
   ],
-  templateUrl: './crear-clientes.component.html',
-  styleUrl: './crear-clientes.component.css'
+  templateUrl: './crear-clientes.component.html'
 })
 export class CrearClientesComponent {
 

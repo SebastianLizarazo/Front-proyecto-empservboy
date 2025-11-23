@@ -12,8 +12,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-crear-recepcion',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './crear-recepcion.component.html',
-  styleUrl: './crear-recepcion.component.css'
+  templateUrl: './crear-recepcion.component.html'
 })
 export class CrearRecepcionComponent implements OnInit {
   recepcionForm: FormGroup;

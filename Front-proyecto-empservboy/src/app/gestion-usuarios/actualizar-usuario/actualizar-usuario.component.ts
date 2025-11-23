@@ -9,8 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   selector: 'app-actualizar-usuario',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './actualizar-usuario.component.html',
-  styleUrl: './actualizar-usuario.component.css'
+  templateUrl: './actualizar-usuario.component.html'
 })
 export class ActualizarUsuarioComponent {
   usuarioForm!: FormGroup;

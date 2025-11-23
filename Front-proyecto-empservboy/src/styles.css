@@ -91,8 +91,8 @@ html, body {
   background: #a71d2a;
 }
 
-/* Botón de crear */
-.btn-success {
+/* Botón de crear en tablas */
+.btn-create {
   background: #A8BF56;
   color: #fff;
   display: block;
@@ -105,7 +105,7 @@ html, body {
   transition: all 0.3s ease;
 }
 
-.btn-success:hover {
+.btn-create:hover {
   background: #8F9E2A;
 }
 
@@ -135,5 +135,122 @@ html, body {
     content: attr(data-label);
     font-weight: 600;
     color: #555;
+  }
+}
+
+/* ===== ESTILOS GLOBALES DE FORMULARIOS ===== */
+
+/* Contenedor de formulario */
+.container.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Título del formulario */
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #16558c;
+  font-weight: bold;
+}
+
+/* Formulario */
+.client-form {
+  width: 100%;
+}
+
+/* Grupo de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+/* Controles del formulario (inputs, selects, textareas) */
+.form-control {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: #16558c;
+  outline: none;
+  box-shadow: 0 0 4px rgba(22, 85, 140, 0.25);
+}
+
+.form-control:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* Grupo de botones */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Botones del formulario */
+.button-group .btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-group .btn-submit {
+  background: #A8BF56;
+  color: #fff;
+}
+
+.button-group .btn-submit:hover:enabled {
+  background: #8F9E2A;
+}
+
+.button-group .btn-cancel {
+  background: #f51212;
+  color: #fff;
+}
+
+.button-group .btn-cancel:hover {
+  background: #f08482;
+}
+
+.button-group .btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive para formularios */
+@media (max-width: 600px) {
+  .container.form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
   }
 }

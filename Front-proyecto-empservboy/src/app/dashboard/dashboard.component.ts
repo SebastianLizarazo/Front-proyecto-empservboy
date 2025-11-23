@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -9,42 +9,57 @@ import { CommonModule } from '@angular/common';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
-  modules = [
+export class DashboardComponent implements OnInit, OnDestroy {
+  currentSlide = 0;
+  private autoPlayInterval: any;
+
+  images = [
     {
-      title: 'Gestión de Clientes',
-      description: 'Administrar información de clientes',
-      icon: '👥',
-      route: '/clientes',
-      color: '#007bff'
+      url: '/assets/carousel-images/carousel1.jpeg',
+      alt: 'Imagen 1',
     },
     {
-      title: 'Gestión de Usuarios',
-      description: 'Administrar usuarios del sistema',
-      icon: '👤',
-      route: '/usuarios',
-      color: '#28a745'
+      url: '/assets/carousel-images/carousel2.png',
+      alt: 'Imagen 2',
     },
     {
-      title: 'Gestión de Contratos',
-      description: 'Administrar contratos',
-      icon: '📄',
-      route: '/contratos',
-      color: '#ffc107'
-    },
-    {
-      title: 'Gestión de Residuos',
-      description: 'Administrar recepción de residuos',
-      icon: '♻️',
-      route: '/residuos',
-      color: '#17a2b8'
+      url: '/assets/carousel-images/carousel3.png',
+      alt: 'Imagen 3',
     }
   ];
 
   constructor(private router: Router) {}
 
-  navigateTo(route: string): void {
-    this.router.navigate([route]);
+  ngOnInit(): void {
+    this.startAutoPlay();
+  }
+
+  ngOnDestroy(): void {
+    this.stopAutoPlay();
+  }
+
+  nextSlide(): void {
+    this.currentSlide = (this.currentSlide + 1) % this.images.length;
+  }
+
+  previousSlide(): void {
+    this.currentSlide = this.currentSlide === 0 ? this.images.length - 1 : this.currentSlide - 1;
+  }
+
+  goToSlide(index: number): void {
+    this.currentSlide = index;
+  }
+
+  startAutoPlay(): void {
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide();
+    }, 10000); // Cambiar imagen cada 10 segundos
+  }
+
+  stopAutoPlay(): void {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+    }
   }
 
   logout(): void {

@@ -12,8 +12,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-actualizar-recepcion',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './actualizar-recepcion.component.html',
-  styleUrl: './actualizar-recepcion.component.css'
+  templateUrl: './actualizar-recepcion.component.html'
 })
 export class ActualizarRecepcionComponent implements OnInit {
   recepcionForm: FormGroup;

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container form-container">
   <h2 class="form-title">Crear Contrato</h2>
 
   <form class="client-form" [formGroup]="contratoForm" (ngSubmit)="onSubmit()">
@@ -38,10 +38,10 @@
     </div>
 
     <div class="button-group">
-      <button class="btn btn-secondary" type="button" (click)="cancelar()">
+      <button class="btn btn-cancel" type="button" (click)="cancelar()">
         Cancelar
       </button>
-      <button class="btn btn-success" type="submit" [disabled]="contratoForm.invalid">
+      <button class="btn btn-submit" type="submit" [disabled]="contratoForm.invalid">
         Guardar
       </button>
     </div>

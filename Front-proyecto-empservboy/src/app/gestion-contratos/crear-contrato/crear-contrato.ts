@@ -12,8 +12,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-crear-contrato',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './crear-contrato.html',
-  styleUrl: './crear-contrato.css'
+  templateUrl: './crear-contrato.html'
 })
 export class CrearContrato implements OnInit {
   contratoForm: FormGroup;

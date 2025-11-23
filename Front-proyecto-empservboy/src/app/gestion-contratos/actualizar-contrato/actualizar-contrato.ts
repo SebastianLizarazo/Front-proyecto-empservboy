@@ -12,8 +12,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-actualizar-contrato',
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
-  templateUrl: './actualizar-contrato.html',
-  styleUrl: './actualizar-contrato.css'
+  templateUrl: './actualizar-contrato.html'
 })
 export class ActualizarContrato implements OnInit {
   contratoForm: FormGroup;

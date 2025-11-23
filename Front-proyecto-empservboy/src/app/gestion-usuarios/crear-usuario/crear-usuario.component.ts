@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
   selector: 'app-crear-usuario',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './crear-usuario.component.html',
-  styleUrl: './crear-usuario.component.css'
+  templateUrl: './crear-usuario.component.html'
 })
 export class CrearUsuarioComponent {
   usuarioForm: FormGroup;

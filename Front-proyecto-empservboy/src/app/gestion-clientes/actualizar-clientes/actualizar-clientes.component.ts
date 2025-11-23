@@ -11,8 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     ReactiveFormsModule
   ],
-  templateUrl: './actualizar-clientes.component.html',
-  styleUrl: './actualizar-clientes.component.css'
+  templateUrl: './actualizar-clientes.component.html'
 })
 export class ActualizarClientesComponent {
   clienteForm!: FormGroup;
