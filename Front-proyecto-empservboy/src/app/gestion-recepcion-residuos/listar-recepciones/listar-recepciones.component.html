@@ -5,16 +5,16 @@
     <table class="students-table">
       <thead>
         <tr>
-          <th>Cliente ID</th>
-          <th>Tipo Residuo</th>
+          <th>Cliente</th>
+          <th>Tipo de Residuo</th>
           <th>Cantidad (kg)</th>
-          <th>Fecha Recepción</th>
+          <th>Fecha de Recepción</th>
           <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let residuo of residuos">
-          <td>{{ residuo.cliente_id }}</td>
+          <td>{{ getNombreCliente(residuo.cliente_id) }}</td>
           <td>{{ residuo.tipo_residuo }}</td>
           <td>{{ residuo.cantidad_kg }}</td>
           <td>{{ residuo.fecha_recepcion }}</td>

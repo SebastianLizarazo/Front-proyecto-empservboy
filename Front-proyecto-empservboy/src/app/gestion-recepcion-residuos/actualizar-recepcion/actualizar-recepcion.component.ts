@@ -1,24 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { Residuo } from '../Interfaces/residuo.interface';
+import { Cliente } from '../../gestion-clientes/Interfaces/cliente.interface';
 import { GestionRecepcionResiduosService } from '../gestion-recepcion-residuos-service.service';
+import { GestionClientesServiceService } from '../../gestion-clientes/gestion-clientes-service.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-actualizar-recepcion',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './actualizar-recepcion.component.html',
   styleUrl: './actualizar-recepcion.component.css'
 })
 export class ActualizarRecepcionComponent implements OnInit {
   recepcionForm: FormGroup;
   recepcionId: string = '';
+  clientes: Cliente[] = [];
 
   constructor(
     private fb: FormBuilder,
     private residuoService: GestionRecepcionResiduosService,
+    private clienteService: GestionClientesServiceService,
     private router: Router,
     private route: ActivatedRoute
   ) {
@@ -33,7 +38,23 @@ export class ActualizarRecepcionComponent implements OnInit {
 
   ngOnInit(): void {
     this.recepcionId = this.route.snapshot.paramMap.get('codigo') || '';
+    this.cargarClientes();
+  }
 
+  cargarClientes(): void {
+    this.clienteService.getClientes().subscribe({
+      next: (data: Cliente[]) => {
+        this.clientes = data;
+        this.cargarRecepcion();
+      },
+      error: (err) => {
+        console.error('Error al cargar clientes:', err);
+        this.cargarRecepcion();
+      }
+    });
+  }
+
+  cargarRecepcion(): void {
     if (this.recepcionId) {
       this.residuoService.getResiduo(this.recepcionId).subscribe({
         next: (data: Residuo) => {

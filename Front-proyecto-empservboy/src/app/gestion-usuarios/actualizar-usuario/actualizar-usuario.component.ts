@@ -28,7 +28,6 @@ export class ActualizarUsuarioComponent {
 
     this.usuarioForm = this.fb.group({
       id: [{ value: '', disabled: true }],
-      usuarioId: ['', Validators.required],
       nombre: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
       rol: ['', Validators.required],

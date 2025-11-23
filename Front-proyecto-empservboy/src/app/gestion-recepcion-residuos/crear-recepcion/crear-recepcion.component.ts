@@ -1,23 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Residuo } from '../Interfaces/residuo.interface';
+import { Cliente } from '../../gestion-clientes/Interfaces/cliente.interface';
 import { GestionRecepcionResiduosService } from '../gestion-recepcion-residuos-service.service';
+import { GestionClientesServiceService } from '../../gestion-clientes/gestion-clientes-service.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-crear-recepcion',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './crear-recepcion.component.html',
   styleUrl: './crear-recepcion.component.css'
 })
-export class CrearRecepcionComponent {
+export class CrearRecepcionComponent implements OnInit {
   recepcionForm: FormGroup;
+  clientes: Cliente[] = [];
 
   constructor(
     private fb: FormBuilder,
     private residuoService: GestionRecepcionResiduosService,
+    private clienteService: GestionClientesServiceService,
     private router: Router
   ) {
     this.recepcionForm = this.fb.group({
@@ -25,6 +30,22 @@ export class CrearRecepcionComponent {
       tipo_residuo: ['', Validators.required],
       cantidad_kg: ['', [Validators.required, Validators.min(0)]],
       fecha_recepcion: ['', Validators.required],
+    });
+  }
+
+  ngOnInit(): void {
+    this.cargarClientes();
+  }
+
+  cargarClientes(): void {
+    this.clienteService.getClientes().subscribe({
+      next: (data: Cliente[]) => {
+        this.clientes = data;
+      },
+      error: (err) => {
+        console.error('Error al cargar clientes:', err);
+        alert('Error al cargar la lista de clientes');
+      }
     });
   }
 

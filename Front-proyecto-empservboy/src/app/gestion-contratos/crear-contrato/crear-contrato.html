@@ -1,1 +1,49 @@
-<p>crear-contrato works!</p>
+<div class="container">
+  <h2 class="form-title">Crear Contrato</h2>
+
+  <form class="client-form" [formGroup]="contratoForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="clienteId">Cliente</label>
+      <select id="clienteId" class="form-control" formControlName="clienteId">
+        <option value="">Seleccione un cliente</option>
+        <option *ngFor="let cliente of clientes" [value]="cliente.id">
+          {{ cliente.nombre }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaInicio">Fecha de Inicio</label>
+      <input id="fechaInicio" class="form-control" formControlName="fechaInicio" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="fechaFin">Fecha de Fin</label>
+      <input id="fechaFin" class="form-control" formControlName="fechaFin" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="valor">Valor</label>
+      <input id="valor" class="form-control" formControlName="valor" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo de Contrato</label>
+      <select id="tipo" class="form-control" formControlName="tipo">
+        <option value="">Seleccione un tipo</option>
+        <option value="Servicio">Servicio</option>
+        <option value="Mantenimiento">Mantenimiento</option>
+        <option value="Recolección">Recolección</option>
+      </select>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-secondary" type="button" (click)="cancelar()">
+        Cancelar
+      </button>
+      <button class="btn btn-success" type="submit" [disabled]="contratoForm.invalid">
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

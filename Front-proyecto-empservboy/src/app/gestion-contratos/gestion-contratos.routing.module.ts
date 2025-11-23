@@ -1,14 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { ListarContratosComponent } from "./listar-contratos/listar-contratos.component";
-import { CrearContratoComponent } from "./crear-contrato/crear-contrato.component";
-import { ActualizarContratoComponent } from "./actualizar-contrato/actualizar-contrato.component";
+import { ListarContratos } from "./listar-contratos/listar-contratos";
+import { CrearContrato } from "./crear-contrato/crear-contrato";
+import { ActualizarContrato } from "./actualizar-contrato/actualizar-contrato";
 
 export const routes: Routes = [
-    { path: '', component: ListarContratosComponent },
-    { path: 'listar', component: ListarContratosComponent },
-    { path: 'crear', component: CrearContratoComponent },
-    { path: 'actualizar/:codigo', component: ActualizarContratoComponent }
+    { path: '', component: ListarContratos },
+    { path: 'listar', component: ListarContratos },
+    { path: 'crear', component: CrearContrato },
+    { path: 'actualizar/:codigo', component: ActualizarContrato }
 ]
 
 @NgModule({

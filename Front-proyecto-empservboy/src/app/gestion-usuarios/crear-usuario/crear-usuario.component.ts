@@ -21,7 +21,6 @@ export class CrearUsuarioComponent {
     private router: Router
   ) {
     this.usuarioForm = this.fb.group({
-      usuarioId: ['', Validators.required],
       nombre: ['', Validators.required],
       correo: ['', [Validators.required, Validators.email]],
       rol: ['', Validators.required],
